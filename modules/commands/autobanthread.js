@@ -15,7 +15,7 @@ module.exports.config = {
  module.exports.handleEvent = async ({ Threads, api, event}) => {
    const moment = require("moment-timezone");
    let { senderID, messageID, threadID } = event;
-   const so_lan_spam = 20;
+   const so_lan_spam = 10;
    const thoi_gian_spam = 60000;
    const unbanAfter = 86400000;
    if (!global.client.autobanthread) global.client.autobanthread = {};
