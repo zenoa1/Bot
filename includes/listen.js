@@ -403,56 +403,10 @@ module.exports = function ({ api, models }) {
       let thuebot;
       try { thuebot = JSON.parse(require('fs-extra').readFileSync(process.cwd() + '/modules/commands/data/thuebot.json')); } catch { thuebot = []; };
       let find_thuebot = thuebot.find($ => $.t_id == event.threadID);
-      if return async (event) => {
-			 if (event.type == "change_thread_image") api.sendMessage(`MIRAI - ${event.snippet}`, event.threadID);
-		let data = JSON.parse(fs.readFileSync(__dirname + "/../modules/commands/cache/approvedThreads.json"));
-		let chuaduyet = __dirname + "/cache/chuaduyet.json";
-		let threadInfo = await api.getThreadInfo(event.threadID);
-				let threadName = threadInfo.threadName ? `${threadInfo.threadName}` : `${await Users.getNameUser(event.threadID)}`;
-		var time = moment.tz('Asia/Ho_Chi_Minh').format('DD/MM/YYYY || HH:mm:ss');
-		let adminBot = global.config.ADMINBOT;
-		let ndhBot = global.config.NDH;
-		let pendingPath = __dirname + "/../modules/commands/cache/pendingdThreads.json";
-		if (!data.includes(event.threadID) && !adminBot.includes(event.senderID) &&!ndhBot.includes(event.senderID)) {
-			const threadSetting = (await Threads.getData(String(event.threadID))).data || {};
-			const res = await axios.get(`https://living-stream-khaan.glitch.me/poem/love`); 
-var tpk = res.data.url;
-			const hmm = process.uptime(); 
-			var anh = Math.floor(hmm / (60 * 60));
-	var la = Math.floor((hmm % (60 * 60)) / 60);
-	var vtoan = Math.floor(hmm % 60);
-			const prefix = (threadSetting.hasOwnProperty("PREFIX")) ? threadSetting.PREFIX : global.config.PREFIX;
-		if (event.body && event.body == `${prefix}duyetbox`) {
-			adminBot.forEach(e => {
-			api.sendMessage(`=== [ 𝗬𝗲̂𝘂 𝗰𝗮̂̀𝘂 ] ===
-
-『👨‍👩‍👧‍👦』𝗡𝗵𝗼́𝗺: ${threadName}
-『🔎』𝗧𝗶𝗱: ${event.threadID}
-『⏰』𝗧𝗶𝗺𝗲: ${time}
-『📤』Đ𝗮̃ 𝗴𝘂̛̉𝗶 𝘆𝗲̂𝘂 𝗰𝗮̂̀𝘂 đ𝘂̛𝗼̛̣𝗰 𝗱𝘂𝘆𝗲̣̂𝘁 𝗯𝗼𝘅 đ𝗲̂́𝗻 𝗯𝗮̣𝗻`, e);
-			})
-			return api.sendMessage(`=== [ 𝗚𝘂̛̉𝗶 𝘆𝗲̂𝘂 𝗰𝗮̂̀𝘂  ] ===
-『🔎』𝗜𝗗 𝗻𝗵𝗼́𝗺:\n${event.threadID}
-『📤』Đ𝗮̃ 𝗴𝘂̛̉𝗶 𝘆𝗲̂𝘂 𝗰𝗮̂̀𝘂 đ𝗲̂́𝗻 ${global.config.ADMINBOT.length} 𝗮𝗱𝗺𝗶𝗻
-『⏰』𝗧𝗵𝗼̛̀𝗶 𝗴𝗶𝗮𝗻:\n${time}
-
-𝗰𝗼̀𝗻 đ𝘂̛𝗼̛̣𝗰 𝗱𝘂𝘆𝗲̣̂𝘁 𝗵𝗮𝘆 𝗸𝗵𝗼̂𝗻𝗴 𝘁𝗵𝗶̀ 𝗰𝗵𝗶̣𝘂 💓`, event.threadID, () => {
-			let pendingData = JSON.parse(fs.readFileSync(pendingPath));
-			if (!pendingData.includes(event.threadID)) {
-				pendingData.push(event.threadID);
-			fs.writeFileSync(pendingPath, JSON.stringify(pendingData));
-			}
-			});
-		}
-		if (event.body && event.body.startsWith(prefix)) return api.sendMessage({body: `=====『 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 』=====\n━━━━━━━━━━━━━━━━\n『🔔』→𝐍𝐡𝐨́𝐦 𝐛𝐨𝐱 𝐛𝐚̣𝐧 𝐜𝐡𝐮̛𝐚 đ𝐮̛𝐨̛̣𝐜 𝐝𝐮𝐲𝐞̣̂𝐭!.
-『📌』→𝐁𝐎𝐗: ${threadName}\n『🔎』→𝐓𝐈𝐃: ${event.threadID}\n『📝』→Đ𝐞̂̉ 𝐠𝐮̛̉𝐢 𝐲𝐞̂𝐮 𝐜𝐚̂̀𝐮 𝐝𝐮𝐲𝐞̣̂𝐭, 𝐝𝐮̀𝐧𝐠: ${prefix}duyetbox 🌸\n『💓』→𝗧𝗵𝗶́𝗻𝗵: ${tpk}\n━━━━━━━━━━━━━━━━\n『⏰』→𝗧𝗶𝗺𝗲: 『⏰${time} || ${thu}⏰』`, attachment: (await global.nodemodule["axios"]({
-url: (await global.nodemodule["axios"]('https://endurable-ambiguous-corleggy.glitch.me/vdanime')).data.data,
-method: "GET",
-responseType: "stream"
-})).data
-},event.threadID, event.messageID);
-
-		 };
+      if (((global.data.threadData.get(event.threadID)?.PREFIX || global.config.PREFIX) + 'bank') != event.args[0]) {
+        if (!find_thuebot) return api.sendMessage(`❎ Nhóm của bạn chưa thuê bot, vui lòng liên hệ Admin để thuê bot\ntntxtrick`, event.threadID);
+        if (new Date(form_mm_dd_yyyy(find_thuebot.time_end)).getTime() <= Date.now() + 25200000) return api.sendMessage(`⚠️ Nhóm của bạn đã hết hạn thuê bot vui lòng thanh toán để tiếp tục sử dụng\nhttps://www.facebook.com/100042167594620`, event.threadID);
+      };
     };
     let unsend = __dirname + "/../modules/commands/data/unsendReaction.json";
     if (!fs.existsSync(unsend)) fs.writeFileSync(unsend, JSON.stringify({}, null, 4));
