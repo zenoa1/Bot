@@ -20,7 +20,7 @@ module.exports.run = async ({ api, event ,Users}) => {
   var { threadID, messageID, body } = event,{ PREFIX } = global.config;
   let threadSetting = global.data.threadData.get(threadID) || {};
   let prefix = threadSetting.PREFIX || PREFIX;  
-  const tdung = require('./../../anhbotzeno/anh.json');
+  const tdung = require('./cache/gaivip.json');
   var image1 = tdung[Math.floor(Math.random() * tdung.length)].trim();
   var image2 = tdung[Math.floor(Math.random() * tdung.length)].trim();
   function vtuanhihi(image,vtuandz,callback){
