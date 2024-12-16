@@ -58,8 +58,8 @@ users.needObject=Phải là một Object
 
 # includes/handle/handleCommand.js
 
-handleCommand.userBanned=⛔ Hiện tại bạn đang bị ban\nLý do: %1\nAdmin: fb.com/tntxtrick
-handleCommand.threadBanned=⛔ Hiện tại nhóm của bạn đang bị ban\nLý do: %1\nAdmin: fb.com/tntxtrick
+handleCommand.userBanned=⛔ Hiện tại bạn đang bị ban\nLý do: %1\nAdmin: https://www.facebook.com/tantai3729
+handleCommand.threadBanned=⛔ Hiện tại nhóm của bạn đang bị ban\nLý do: %1\nAdmin: https://www.facebook.com/tantai3729
 handleCommand.commandThreadBanned=❎ Nhóm bạn đã bị cấm sử dụng lệnh %1
 handleCommand.commandUserBanned=❎ Bạn đã bị cấm sử dụng lệnh %1
 handleCommand.cantGetInfoThread=Không thể lấy thông tin của nhóm, lỗi: %1
