@@ -405,7 +405,7 @@ module.exports = function ({ api, models }) {
       let find_thuebot = thuebot.find($ => $.t_id == event.threadID);
       if (((global.data.threadData.get(event.threadID)?.PREFIX || global.config.PREFIX) + 'bank') != event.args[0]) {
         if (!find_thuebot) return api.sendMessage(`❎ Nhóm của bạn chưa thuê bot, vui lòng liên hệ Admin để thuê bot\ntntxtrick`, event.threadID);
-        if (new Date(form_mm_dd_yyyy(find_thuebot.time_end)).getTime() <= Date.now() + 25200000) return api.sendMessage(`⚠️ Nhóm của bạn đã hết hạn thuê bot vui lòng thanh toán để tiếp tục sử dụng\nhttps://www.facebook.com/100042167594620`, event.threadID);
+        if (new Date(form_mm_dd_yyyy(find_thuebot.time_end)).getTime() <= Date.now() + 25200000) return api.sendMessage(`⚠️ Nhóm của bạn đã hết hạn thuê bot vui lòng thanh toán để tiếp tục sử dụng\nhttps://www.facebook.com/100081898869164`, event.threadID);
       };
     };
     let unsend = __dirname + "/../modules/commands/data/unsendReaction.json";
