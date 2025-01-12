@@ -38,7 +38,7 @@ module.exports.handleReply = async function({ api, event, args, Threads, handleR
                         msg += typef + ' ' + groupName + '\n» TID: ' + idgr + "\n";
                         console.log(modules, msg)
                     }
-                    api.sendMessage(`» Thông báo từ Admin «\n Nhóm Bạn Đã Bị Ban, cấm dùng bot\nThắc mắc vui lòng liên hệ admin: fb.com/niiozic.dev`, idgr, () =>
+                    api.sendMessage(`» Thông báo từ Admin «\n Nhóm Bạn Đã Bị Ban, cấm dùng bot\nThắc mắc vui lòng liên hệ admin: https://www.facebook.com/tantai3729`, idgr, () =>
                         api.sendMessage(`${global.data.botID}`, () =>
                             api.sendMessage(`» Thực thi Ban «(true/false) «\n\n${msg}`, threadID, () =>
                                 api.unsendMessage(handleReply.messageID))));
