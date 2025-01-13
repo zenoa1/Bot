@@ -10,7 +10,7 @@ module.exports.config = {
 module.exports.onLoad = () => {
     const fs = require("fs-extra");
     const request = require("request");
-    const dirMaterial = __dirname + `/cạche/`;
+    const dirMaterial = __dirname + `/cache/`;
     if (!fs.existsSync(dirMaterial + "cache")) fs.mkdirSync(dirMaterial, { recursive: true });
     if (!fs.existsSync(dirMaterial + "tinder.jpeg")) request("https://i.imgur.com/JrjmeEV.jpeg").pipe(fs.createWriteStream(dirMaterial + "tinder.jpeg"));
 }
