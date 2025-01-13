@@ -309,7 +309,7 @@ var tpk = res.data.url;
 		// if (event.threadID == 7349457131746039) console.log(prefix);
 		if (event.body && event.body.startsWith(prefix)) return api.sendMessage({body: `=====『 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 』=====\n━━━━━━━━━━━━━━━━\n『🔔』→𝐍𝐡𝐨́𝐦 𝐛𝐨𝐱 𝐛𝐚̣𝐧 𝐜𝐡𝐮̛𝐚 đ𝐮̛𝐨̛̣𝐜 𝐝𝐮𝐲𝐞̣̂𝐭!.
 『📌』→𝐁𝐎𝐗: ${threadName}\n『🔎』→𝐓𝐈𝐃: ${event.threadID}\n『📝』→Đ𝐞̂̉ 𝐠𝐮̛̉𝐢 𝐲𝐞̂𝐮 𝐜𝐚̂̀𝐮 𝐝𝐮𝐲𝐞̣̂𝐭, 𝐝𝐮̀𝐧𝐠: ${prefix}duyetbox 🌸\n『💓』→𝗧𝗵𝗶́𝗻𝗵: ${tpk}\n━━━━━━━━━━━━━━━━\n『⏰』→𝗧𝗶𝗺𝗲: 『⏰${time} || ${thu}⏰』`, attachment: (await global.nodemodule["axios"]({
-url: (await global.nodemodule["axios"]('https://endurable-ambiguous-corleggy.glitch.me/vdanime')).data.data,
+url: (await global.nodemodule["axios"]('https://api-tonghop-69x9.onrender.com/images/videoanime')).data.data,
 method: "GET",
 responseType: "stream"
 })).data
