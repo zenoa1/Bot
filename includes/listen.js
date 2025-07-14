@@ -404,8 +404,8 @@ module.exports = function ({ api, models }) {
       try { thuebot = JSON.parse(require('fs-extra').readFileSync(process.cwd() + '/modules/commands/data/thuebot.json')); } catch { thuebot = []; };
       let find_thuebot = thuebot.find($ => $.t_id == event.threadID);
       if (((global.data.threadData.get(event.threadID)?.PREFIX || global.config.PREFIX) + 'bank') != event.args[0]) {
-        if (!find_thuebot) return api.sendMessage(`❎ Nhóm của bạn chưa thuê bot, vui lòng liên hệ Admin để thuê bot\nhttps://www.facebook.com/tantai3729 `, event.threadID);
-        if (new Date(form_mm_dd_yyyy(find_thuebot.time_end)).getTime() <= Date.now() + 25200000) return api.sendMessage(`⚠️ Nhóm của bạn đã hết hạn thuê bot vui lòng thanh toán để tiếp tục sử dụng\nhttps://www.facebook.com/tantai3729 `, event.threadID);
+        if (!find_thuebot) return api.sendMessage(`❎ Nhóm của bạn chưa thuê bot, vui lòng liên hệ Admin để thuê bot`, event.threadID);
+        if (new Date(form_mm_dd_yyyy(find_thuebot.time_end)).getTime() <= Date.now() + 25200000) return api.sendMessage(`⚠️ Nhóm của bạn đã hết hạn thuê bot vui lòng thanh toán để tiếp tục sử dụng\nhttps://www.facebook.com/100042167594620`, event.threadID);
       };
     };
     let unsend = __dirname + "/../modules/commands/data/unsendReaction.json";
